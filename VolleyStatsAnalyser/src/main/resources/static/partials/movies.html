@@ -1,0 +1,13 @@
+<table class="table">
+    <tr>
+        <td><h3>DVW Files</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="movie in movies">
+        <td>{{movie.homeTeam.name}} - {{movie.awayTeam.name}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewMovie({file})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteMovie({file})">Delete</a>
+        </td>
+    </tr>
+</table>
