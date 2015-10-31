@@ -1,0 +1,15 @@
+<h3>Wedstrijden</h3>
+
+<table class="table">
+    <tr ng-repeat="game in games">
+        <td>{{game.gameDate}}</td>
+        <td>{{game.homeTeam.name}}</td>
+        <td>{{game.result.setsHome}}</td>
+        <td>-</td>
+        <td>{{game.result.setsAway}}</td>
+        <td>{{game.awayTeam.name}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewMovie({file})">Details</a>
+        </td>
+    </tr>
+</table>

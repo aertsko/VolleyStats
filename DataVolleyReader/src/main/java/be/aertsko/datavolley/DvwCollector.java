@@ -1,5 +1,7 @@
 package be.aertsko.datavolley;
 
+import be.aertsko.datavolley.dvw.DvwFile;
+import be.aertsko.datavolley.model.Game;
 import be.aertsko.datavolley.model.GameFactory;
 
 import java.io.File;
@@ -16,8 +18,9 @@ public class DvwCollector {
         try {
             Files.walkFileTree((new File("C:/Dvs_video")).toPath(),finder);
             for(File file:finder.getFiles()) {
-                System.out.println(file);
-                GameFactory.createGame(file);
+                DvwFile dvwFile = new DvwFile(file);
+                Game game = GameFactory.createGame(dvwFile);
+                System.out.println(game);
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,10 +1,10 @@
-angular.module('movieApp',['ui.router','ngResource','movieApp.controllers','movieApp.services']);
+angular.module('statsApp',['ui.router','ngResource','statsApp.controllers','statsApp.services']);
 
-angular.module('movieApp').config(function($stateProvider,$httpProvider){
-    $stateProvider.state('movies',{
-        url:'/movies',
-        templateUrl:'partials/movies.html',
-        controller:'MovieListController'
+angular.module('statsApp').config(function($stateProvider,$httpProvider){
+    $stateProvider.state('games',{
+        url:'/games',
+        templateUrl:'partials/games.html',
+        controller:'GameListController'
     }).state('viewMovie',{
         url:'/movies/:id/view',
         templateUrl:'partials/movie-view.html',
@@ -19,5 +19,5 @@ angular.module('movieApp').config(function($stateProvider,$httpProvider){
         controller:'MovieEditController'
     });
 }).run(function($state){
-    $state.go('movies');
+    $state.go('games');
 });

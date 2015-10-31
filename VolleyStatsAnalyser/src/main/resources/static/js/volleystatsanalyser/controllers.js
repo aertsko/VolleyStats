@@ -1,9 +1,9 @@
 /**
  * Created by Sandeep on 01/06/14.
  */
-angular.module('movieApp.controllers',[]).controller('MovieListController',function($scope,$state,popupService,$window,Movie){
+angular.module('statsApp.controllers',[]).controller('GameListController',function($scope,$state,popupService,$window,Games){
 
-    $scope.movies=Movie.query();
+    $scope.games=Games.query();
 
     $scope.deleteMovie=function(movie){
         if(popupService.showPopup('Really delete this?')){

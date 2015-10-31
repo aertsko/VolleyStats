@@ -1,6 +1,7 @@
 package be.aertsko.volleystats.rest;
 
 import be.aertsko.datavolley.DvwFileFinder;
+import be.aertsko.datavolley.dvw.DvwFile;
 import be.aertsko.datavolley.model.Game;
 import be.aertsko.datavolley.model.GameFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -30,7 +31,8 @@ public class DvwFileRestService {
             Files.walkFileTree((new File("C:/Dvs_video")).toPath(), finder);
             List<Game> games = new ArrayList<Game>();
             for(File file:finder.getFiles()) {
-                games.add(GameFactory.createGame(file));
+                DvwFile dvwFile = new DvwFile(file);
+                games.add(GameFactory.createGame(dvwFile));
             }
             return games;
         } catch (IOException e) {

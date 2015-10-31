@@ -8,7 +8,7 @@ angular.module('volleystatsanalyser.services',[]).factory('DvwFile', function($r
 angular.module('volleystatsanalyser').config(function($stateProvider) {
     $stateProvider.state('files', { // state for showing all movies
         url: '/files',
-        templateUrl: '/partials/movies.html',
+        templateUrl: '/partials/games.html',
         controller: 'DvwFileController'
     }).state('viewMovie', { //state for showing single movie
         url: '/movies/:id/view',
